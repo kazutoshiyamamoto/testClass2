@@ -11,23 +11,23 @@ import UIKit
 class ViewController: UIViewController {
     
     struct SomeStruct {
-        let value = 123
+        let value: Int
         
-        func printValue() {
-            print(self.value)
+        init(value: Int) {
+            self.value = value
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
