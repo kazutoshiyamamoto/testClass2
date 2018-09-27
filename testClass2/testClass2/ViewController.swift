@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    struct SomeStruct {
-        let value: Int
-        
-        init(value: Int) {
-            self.value = value
-        }
+    struct Color {
+        var red: Int
+        var green: Int
+        var blue: Int
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
