@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        let article = Article(id: 1, title: "title", body: "body")
+        article.printBody()
     }
     
     override func didReceiveMemoryWarning() {
