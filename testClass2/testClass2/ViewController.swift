@@ -10,30 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    struct Color {
-        var red: Int
-        var green: Int
-        var blue: Int
+    struct Article {
+        let id: Int
+        let title: String
+        let body: String
+        
+        init(id: Int, title: String, body: String) {
+            self.id = id
+            self.title = title
+            self.body = body
+        }
+        
+        func printBody()  {
+            print(body)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //
-        var a = Color(red: 255, green: 0, blue: 0)
-        var b = a
-        a.red = 0
-        
-        //
-        print(a.red)
-        print(a.green)
-        print(a.blue)
-        
-        //
-        print(b.red)
-        print(b.green)
-        print(b.blue)
+
     }
     
     override func didReceiveMemoryWarning() {
