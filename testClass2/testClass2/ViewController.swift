@@ -10,19 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    struct Article {
-        let id: Int
-        let title: String
-        let body: String
+    struct SomeStruct {
+        var id: Int
         
-        init(id: Int, title: String, body: String) {
+        init(id: Int) {
             self.id = id
-            self.title = title
-            self.body = body
-        }
-        
-        func printBody()  {
-            print(body)
         }
     }
     
@@ -30,8 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let article = Article(id: 1, title: "title", body: "body")
-        article.printBody()
+
     }
     
     override func didReceiveMemoryWarning() {
