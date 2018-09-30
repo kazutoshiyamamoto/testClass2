@@ -22,7 +22,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        var variable = SomeStruct(id: 1)
+        variable.id = 2
+        print(variable.id)
+        
+        let constant = SomeStruct(id: 1)
+        constant.id = 2
     }
     
     override func didReceiveMemoryWarning() {
