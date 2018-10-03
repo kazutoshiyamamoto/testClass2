@@ -8,27 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class User {
+    let id: Int
     
-    struct SomeStruct {
-        var id: Int
-        
-        init(id: Int) {
-            self.id = id
-        }
-        
-        mutating func someMethod() {
-            id = 4
-        }
+    var message: String {
+        return "Hello"
     }
     
+    init(id: Int) {
+        self.id = id
+    }
+    
+    func printProfile() {
+        print("id: \(id)")
+        print("message: \(message)")
+    }
+}
+
+
+
+class ViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var a = SomeStruct(id: 1)
-        a.someMethod()
-        print(a.id)
+
     }
     
     override func didReceiveMemoryWarning() {
