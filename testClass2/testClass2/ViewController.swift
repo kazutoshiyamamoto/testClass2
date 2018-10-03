@@ -40,7 +40,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        let registeredUser = RegisteredUser(id: 1, name:  "test")
+        let id = registeredUser.id
+        let message = registeredUser.message
+        registeredUser.printProfile()
     }
     
     override func didReceiveMemoryWarning() {
