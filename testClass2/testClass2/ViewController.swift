@@ -25,7 +25,14 @@ class User {
     }
 }
 
-
+class RegisteredUser : User {
+    let name: String
+    
+    init(id: Int, name: String) {
+        self.name = name
+        super.init(id: id)
+    }
+}
 
 class ViewController: UIViewController {
 
