@@ -28,9 +28,18 @@ class User {
 class RegisteredUser : User {
     let name: String
     
+    override var message: String {
+        return "Hello, my name is \(name)."
+    }
+    
     init(id: Int, name: String) {
         self.name = name
         super.init(id: id)
+    }
+    
+    override func printProfile() {
+        super.printProfile()
+        print("name: \(name)")
     }
 }
 
