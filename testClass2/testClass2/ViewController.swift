@@ -49,9 +49,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let registeredUser = RegisteredUser(id: 1, name:  "test")
-        let id = registeredUser.id
-        let message = registeredUser.message
+        let user = User(id: 1)
+        user.printProfile()
+        
+        print("--")
+        
+        let registeredUser = RegisteredUser(id: 2, name: "test")
         registeredUser.printProfile()
     }
     
@@ -59,7 +62,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
 
