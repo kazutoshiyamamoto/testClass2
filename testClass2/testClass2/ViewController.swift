@@ -20,6 +20,12 @@ class B: A {
     }
 }
 
+class C: B {
+    override class func inheritanceHierarchy() -> String {
+        return super.inheritanceHierarchy() + "<-C"
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
