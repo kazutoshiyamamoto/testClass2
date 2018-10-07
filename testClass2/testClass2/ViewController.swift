@@ -9,14 +9,14 @@
 import UIKit
 
 class A {
-    class var  className: String {
+    class func inheritanceHierarchy()  -> String {
         return "A"
     }
 }
 
 class B: A {
-    override class var className: String {
-        return "B"
+    override class func  inheritanceHierarchy() -> String {
+        return super.inheritanceHierarchy() + "<-B"
     }
 }
 
@@ -26,8 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print(A.className)
-        print(B.className)
+
     }
     
     override func didReceiveMemoryWarning() {
