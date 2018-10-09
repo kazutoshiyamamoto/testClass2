@@ -8,21 +8,15 @@
 
 import UIKit
 
-class A {
-    class func inheritanceHierarchy()  -> String {
-        return "A"
+class User {
+    let id: Int
+    
+    init(id: Int) {
+        self.id = id
     }
-}
-
-class B: A {
-    override class func  inheritanceHierarchy() -> String {
-        return super.inheritanceHierarchy() + "<-B"
-    }
-}
-
-class C: B {
-    override class func inheritanceHierarchy() -> String {
-        return super.inheritanceHierarchy() + "<-C"
+    
+    func printProfile() {
+        print("id: \(id)")
     }
 }
 
@@ -32,9 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print(A.inheritanceHierarchy())
-        print(B.inheritanceHierarchy())
-        print(C.inheritanceHierarchy())
+
     }
     
     override func didReceiveMemoryWarning() {
