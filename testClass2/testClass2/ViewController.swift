@@ -20,13 +20,24 @@ class User {
     }
 }
 
-class ViewController: UIViewController {
+class RegisteredUser: User {
+    let name: String
+    
+    init(id: Int, name: String) {
+        self.name = name
+        super.init(id: id)
+        
+        self.printProfile()
+    }
+}
 
+class ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        
     }
     
     override func didReceiveMemoryWarning() {
