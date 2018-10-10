@@ -24,7 +24,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let sunday = Weekday.sunday
+        let monday = Weekday.monday
         
+        print(sunday)
+        print(monday)
     }
     
     override func didReceiveMemoryWarning() {
