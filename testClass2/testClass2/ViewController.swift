@@ -8,27 +8,14 @@
 
 import UIKit
 
-class User {
-    let id: Int
-    
-    init(id: Int) {
-        self.id = id
-    }
-    
-    func printProfile() {
-        print("id: \(id)")
-    }
-}
-
-class RegisteredUser: User {
-    let name: String
-    
-    init(id: Int, name: String) {
-        self.name = name
-        super.init(id: id)
-        
-        self.printProfile()
-    }
+enum Weekday {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
 }
 
 class ViewController: UIViewController {
