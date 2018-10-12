@@ -8,15 +8,15 @@
 
 import UIKit
 
-enum Weekday {
-    case sunday
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-    case saturday
+protocol SomeProtocol {
+    func someMethod()
 }
+
+struct SomeStruct1: SomeProtocol {
+    func someMethod() {
+    }
+}
+
 
 class ViewController: UIViewController {
     
@@ -24,11 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let sunday = Weekday.sunday
-        let monday = Weekday.monday
-        
-        print(sunday)
-        print(monday)
+
     }
     
     override func didReceiveMemoryWarning() {
