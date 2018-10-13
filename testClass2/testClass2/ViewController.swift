@@ -9,14 +9,10 @@
 import UIKit
 
 protocol SomeProtocol {
-    func someMethod()
-}
-
-struct SomeStruct1: SomeProtocol {
-    func someMethod() {
+    var variable: Int {
+        get
     }
 }
-
 
 class ViewController: UIViewController {
     
@@ -24,7 +20,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        func someMethod(x: SomeProtocol) {
+            print(x.variable)
+        }
     }
     
     override func didReceiveMemoryWarning() {
