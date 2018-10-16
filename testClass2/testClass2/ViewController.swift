@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol SomeProtocol {
-    var variable: Int {
-        get
-    }
+struct User {
+    let id: Int
+    let name: String
+    let email: String
 }
 
 class ViewController: UIViewController {
@@ -20,14 +20,30 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        func someMethod(x: SomeProtocol) {
-            print(x.variable)
+        let id = 1
+        if let user = finder(byID: id) {
+            print("Name:\(user.name)")
+        } else {
+            print("Error: User not found")
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func finder(byID id: Int) -> User? {
+        let users = [
+        User(id: 1, name: "test", email: "@example.com"),
+        ]
+        
+        for user in users {
+            if user.id == id {
+                return user
+            }
+        }
+        return nil
     }
 }
 
