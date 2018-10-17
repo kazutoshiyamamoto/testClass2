@@ -8,11 +8,7 @@
 
 import UIKit
 
-struct User {
-    let id: Int
-    let name: String
-    let email: String
-}
+struct SomeError: Error {}
 
 class ViewController: UIViewController {
     
@@ -20,12 +16,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let id = 1
-        if let user = finder(byID: id) {
-            print("Name:\(user.name)")
-        } else {
-            print("Error: User not found")
+        do {
+            throw SomeError()
+            print("Success")
+        } catch {
+            print("Failure: \(error)")
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,17 +30,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func finder(byID id: Int) -> User? {
-        let users = [
-        User(id: 1, name: "test", email: "@example.com"),
-        ]
-        
-        for user in users {
-            if user.id == id {
-                return user
-            }
-        }
-        return nil
-    }
+    
 }
 
