@@ -8,7 +8,10 @@
 
 import UIKit
 
-struct SomeError: Error {}
+enum SomeError {
+    case error1
+    case error2(reason: String)
+}
 
 class ViewController: UIViewController {
     
@@ -17,12 +20,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         do {
-            throw SomeError()
-            print("Success")
+            throw SomeError.error2(reason: "何かがおかしいようです")
+        } catch SomeError.error1 {
+            print("error1")
+        } catch SomeError.error2(let reason) {
+            print("error2: \(reason)")
         } catch {
-            print("Failure: \(error)")
+            print("Unknown error: \(error)")
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
