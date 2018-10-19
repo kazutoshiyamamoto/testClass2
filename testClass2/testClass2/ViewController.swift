@@ -33,7 +33,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        let book = Book(name: "Swift実践入門")
+        print(book.description)
     }
     
     override func didReceiveMemoryWarning() {
