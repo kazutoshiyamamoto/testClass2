@@ -8,9 +8,15 @@
 
 import UIKit
 
-enum SomeError {
-    case error1
-    case error2(reason: String)
+protocol Item {
+    var name: String { get }
+    var category: String { get }
+}
+
+extension Item {
+    var description: String {
+        return "商品名：\(name)、カテゴリ：\(category)"
+    }
 }
 
 class ViewController: UIViewController {
@@ -19,15 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        do {
-            throw SomeError.error2(reason: "何かがおかしいようです")
-        } catch SomeError.error1 {
-            print("error1")
-        } catch SomeError.error2(let reason) {
-            print("error2: \(reason)")
-        } catch {
-            print("Unknown error: \(error)")
-        }
+
     }
     
     override func didReceiveMemoryWarning() {
