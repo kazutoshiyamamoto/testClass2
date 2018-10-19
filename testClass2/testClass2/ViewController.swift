@@ -19,6 +19,14 @@ extension Item {
     }
 }
 
+struct Book : Item {
+    let name: String
+    
+    var category: String {
+        return "書籍"
+    }
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
