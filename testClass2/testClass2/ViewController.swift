@@ -8,24 +8,14 @@
 
 import UIKit
 
-protocol Item {
-    var name: String { get }
-    var category: String { get }
+public protocol Encodable {
+    func encode(to encoder: Encoder) throws
 }
 
-extension Item {
-    var description: String {
-        return "商品名：\(name)、カテゴリ：\(category)"
-    }
+public protocol Decodable {
+    init(from decoder: Decoder)  throws
 }
 
-struct Book : Item {
-    let name: String
-    
-    var category: String {
-        return "書籍"
-    }
-}
 
 class ViewController: UIViewController {
     
@@ -33,8 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let book = Book(name: "Swift実践入門")
-        print(book.description)
+ 
     }
     
     override func didReceiveMemoryWarning() {
